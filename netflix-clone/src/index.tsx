@@ -64,7 +64,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   color:black;
   line-height: 1.2;
-  
+  color: ${(props) => props.theme.white.darker};
+  background-color: black;
 }
 a {
   text-decoration:none;
@@ -75,15 +76,15 @@ a {
 const client = new QueryClient();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <QueryClientProvider client={client}>
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <App />
-        </ThemeProvider>
-      </QueryClientProvider>
-    </RecoilRoot>
-  </React.StrictMode>,
-  document.getElementById("root")
+    <React.StrictMode>
+        <RecoilRoot>
+            <QueryClientProvider client={client}>
+                <ThemeProvider theme={theme}>
+                    <GlobalStyle />
+                    <App />
+                </ThemeProvider>
+            </QueryClientProvider>
+        </RecoilRoot>
+    </React.StrictMode>,
+    document.getElementById("root")
 );
